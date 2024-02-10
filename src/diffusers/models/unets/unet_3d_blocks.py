@@ -1390,7 +1390,7 @@ class CrossAttnDownBlockMotion(nn.Module):
                         create_custom_forward(downsampler), hidden_states, **ckpt_kwargs
                     )
                 else:
-                    hidden_states = downsampler(hidden_states, scale=scale)
+                    hidden_states = downsampler(hidden_states, scale=lora_scale)
 
             output_states = output_states + (hidden_states,)
 
