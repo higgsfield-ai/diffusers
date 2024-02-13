@@ -127,7 +127,9 @@ _deps = [
     "requests",
     "tensorboard",
     "transformers>=4.25.1",
-    "urllib3<=2.0.0",
+    "urllib3",
+    "torch",
+    "torchvision"
 ]
 
 # this is a lookup table with items like:
@@ -220,6 +222,7 @@ extras["test"] = deps_list(
     "scipy",
     "transformers",
 )
+extras["torch"] = deps_list("torch", "accelerate")
 
 if os.name == "nt":  # windows
     extras["flax"] = []  # jax is not supported on windows
