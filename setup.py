@@ -126,7 +126,6 @@ _deps = [
     "regex!=2019.12.17",
     "requests",
     "tensorboard",
-    "torch>=1.4,<2.2.0",
     "torchvision<0.17",
     "transformers>=4.25.1",
     "urllib3<=2.0.0",
