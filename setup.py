@@ -218,10 +218,8 @@ extras["test"] = deps_list(
     "safetensors",
     "sentencepiece",
     "scipy",
-    "torchvision",
     "transformers",
 )
-extras["torch"] = deps_list("torch", "accelerate")
 
 if os.name == "nt":  # windows
     extras["flax"] = []  # jax is not supported on windows
