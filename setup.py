@@ -126,9 +126,8 @@ _deps = [
     "regex!=2019.12.17",
     "requests",
     "tensorboard",
-    "torchvision<0.17",
     "transformers>=4.25.1",
-    "urllib3<=2.0.0",
+    #"urllib3<=2.0.0",
 ]
 
 # this is a lookup table with items like:
