@@ -87,6 +87,30 @@ class TransformerTemporalModel(ModelMixin, ConfigMixin):
         num_positional_embeddings: Optional[int] = None,
     ):
         super().__init__()
+ 
+        print("IN CHANNELS: ", in_channels)
+        
+        import os 
+        if 'MODEL' in os.environ:
+            if in_channels == 320:
+                num_attention_heads = 8
+                attention_head_dim = 64
+                num_layers = 2
+
+            elif in_channels == 640:
+                num_attention_heads = 8
+                attention_head_dim = 128 
+                num_layers = 4
+                
+            elif in_channels == 1280:
+                import os
+                if os.environ['MODEL'] == '4B':
+                    num_attention_heads = 16 
+                else:
+                    num_attention_heads = 12
+                attention_head_dim = 128 
+                num_layers = 4
+        
         self.num_attention_heads = num_attention_heads
         self.attention_head_dim = attention_head_dim
         inner_dim = num_attention_heads * attention_head_dim
